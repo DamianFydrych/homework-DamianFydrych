@@ -12,10 +12,7 @@ This speeds up the tests significantly
 confirmed_cases = pd.read_csv(CONFIRMED_CASES_URL, error_bad_lines=False)
 
 
-def poland_cases_by_date(day: int, month: int, year: int = 2020) -> int:
-  import datetime
-  result = df.loc[df["Country/Region"]=="Poland"][f"{month}/{day}/20"].values[0]
-  return result
+
 
     """
     Returns confirmed infection cases for country 'Poland' given a date.
@@ -32,7 +29,10 @@ def poland_cases_by_date(day: int, month: int, year: int = 2020) -> int:
     :return: Number of cases on a given date as an integer
     """
     
-    # Your code goes here (remove pass)
+   def poland_cases_by_date(day: int, month: int, year: int = 2020) -> int:
+    import datetime
+    result = confirmed_cases.loc[confirmed_cases["Country/Region"]=="Poland"][f"{month}/{day}/{year}"].values[0]
+    return result
     
 
 
