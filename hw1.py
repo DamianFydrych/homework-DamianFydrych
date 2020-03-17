@@ -32,7 +32,7 @@ confirmed_cases = pd.read_csv(CONFIRMED_CASES_URL, error_bad_lines=False)
    def poland_cases_by_date(day: int, month: int, year: int = 2020) -> int:
     import datetime
     result = confirmed_cases.loc[confirmed_cases["Country/Region"]=="Poland"][f"{month}/{day}/{year}"].values[0]
-    return resultr
+    return result
     
 
 
